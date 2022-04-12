@@ -1,4 +1,7 @@
-/*      if ( k < 0 || a > b || s < 0 ) {System.out.println("error"); return null;}
+/*      if ( k < 0 ) throw new Exception("K is negative.");
+        if ( s < 0 ) throw new Exception("S is negative.");
+        if ( a < 0 || b < 0) throw new Exception("Range is negative.");
+        if ( a > b ) throw new Exception("Range is reversed.");
         List primes = new ArrayList();
         int copy;
         int digit;
@@ -37,12 +40,20 @@ import static java.lang.Math.sqrt;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(findPrimes(5,1,1000,5));
+        try {
+            System.out.println(findPrimes(5, 1, 1000, 5));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // Gaseste primele K numere prime, ce au suma cifrelor S, din intervalul [a,b]
-    public static List findPrimes(int k, int a, int b, int s) {
-        if ( k < 0 || a > b || s < 0 ) {System.out.println("error"); return null;}
+    public static List findPrimes(int k, int a, int b, int s) throws Exception {
+        if ( k < 0 ) throw new Exception("K is negative.");
+        if ( s < 0 ) throw new Exception("S is negative.");
+        if ( a < 0 || b < 0) throw new Exception("Range is negative.");
+        if ( a > b ) throw new Exception("Range is reversed.");
 
         List primes = new ArrayList();
         int copy;

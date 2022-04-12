@@ -10,11 +10,28 @@ public class TestTest {
     void simpleTest() {
         List expectedList;
 
-        expectedList = new ArrayList(Arrays.asList(3));
-        Assertions.assertEquals(expectedList, Main.findPrimes(3,1,20,3));
+        try {
+            expectedList = new ArrayList(Arrays.asList(3));
+            Assertions.assertEquals(expectedList, Main.findPrimes(3, 1, 20, 3));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        expectedList = new ArrayList(Arrays.asList(13, 31));
-        Assertions.assertEquals(expectedList, Main.findPrimes(5,1,100,4));
+        try {
+            expectedList = new ArrayList(Arrays.asList(13, 31));
+            Assertions.assertEquals(expectedList, Main.findPrimes(5,1,100,4));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
+        try {
+            expectedList = new ArrayList(Arrays.asList(13, 31));
+            Assertions.assertEquals(expectedList, Main.findPrimes(-4,1,100,4));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
