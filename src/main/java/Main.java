@@ -64,7 +64,7 @@ public class Main {
 
         for(number = a; primes.size() < k && number <= b; number++)
         {
-            if(number == 1) continue;
+            if(number == 0 || number == 1) continue;
             found = false;
             for(divisor = 2; !found && divisor <= sqrt(number); divisor++)
             {
