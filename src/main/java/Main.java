@@ -49,20 +49,20 @@ public class Main {
     }
 
     // Gaseste primele K numere prime, ce au suma cifrelor S, din intervalul [a,b]
-    public static List findPrimes(int k, int a, int b, int s) throws Exception {
-        if ( k < 0 ) throw new Exception("K is negative.");
-        if ( s < 0 ) throw new Exception("S is negative.");
-        if ( a < 0 || b < 0) throw new Exception("Range is negative.");
-        if ( a > b ) throw new Exception("Range is reversed.");
+    public static List<Integer> findPrimes(int k, int a, int b, int s) throws IllegalArgumentException {
+        if ( k < 0 ) throw new IllegalArgumentException("K is negative.");
+        if ( s < 0 ) throw new IllegalArgumentException("S is negative.");
+        if ( a < 0 || b < 0) throw new IllegalArgumentException("Range is negative.");
+        if ( a > b ) throw new IllegalArgumentException("Range is reversed.");
 
-        List primes = new ArrayList();
+        List<Integer> primes = new ArrayList<>();
         int copy;
         int digit;
         int sum;
         boolean found;
         int number, divisor;
 
-        for(number = a; primes.size() <= k && number <= b; number++)
+        for(number = a; primes.size() < k && number <= b; number++)
         {
             if(number == 1) continue;
             found = false;
@@ -84,7 +84,6 @@ public class Main {
                 if(sum == s) primes.add(number);
             }
         }
-
         return primes;
     }
 }

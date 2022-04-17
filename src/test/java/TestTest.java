@@ -8,10 +8,10 @@ import java.util.List;
 public class TestTest {
     @Test
     void simpleTest() {
-        List expectedList;
+        List<Integer> expectedList;
 
         try {
-            expectedList = new ArrayList(Arrays.asList(3));
+            expectedList = new ArrayList<>(Arrays.asList(3));
             Assertions.assertEquals(expectedList, Main.findPrimes(3, 1, 20, 3));
         }
         catch (Exception e) {
@@ -19,7 +19,7 @@ public class TestTest {
         }
 
         try {
-            expectedList = new ArrayList(Arrays.asList(13, 31));
+            expectedList = new ArrayList<>(Arrays.asList(13, 31));
             Assertions.assertEquals(expectedList, Main.findPrimes(5,1,100,4));
         }
         catch (Exception e) {
@@ -27,7 +27,7 @@ public class TestTest {
         }
 
         try {
-            expectedList = new ArrayList(Arrays.asList(13, 31));
+            expectedList = new ArrayList<>(Arrays.asList(13, 31));
             Assertions.assertEquals(expectedList, Main.findPrimes(-4,1,100,4));
         }
         catch (Exception e) {
