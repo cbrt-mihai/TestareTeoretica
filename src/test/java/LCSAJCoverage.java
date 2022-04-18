@@ -7,15 +7,17 @@ import java.util.List;
 public class LCSAJCoverage {
 
     private List<Integer> expectedList;
+    private List<Integer> resultList;
 
     @Test
     void t1Test(){
         // t1 covers LCSAJ 1
         try {
-            expectedList = new ArrayList<>();
-            Assertions.assertEquals(expectedList, Main.findPrimes(-1, 1, 500, 5));
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(new IllegalArgumentException("K is negative.").toString(), e.toString());
+            resultList = Main.findPrimes(-1, 1, 500, 5);
+            Assertions.fail("K should be negative.");
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.assertEquals("K is negative.", e.getMessage());
         }
     }
 
@@ -23,10 +25,11 @@ public class LCSAJCoverage {
     void t2Test(){
         // t2 covers LCSAJ 2
         try {
-            expectedList = new ArrayList<>();
-            Assertions.assertEquals(expectedList, Main.findPrimes(5, 1, 500, -5));
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(new IllegalArgumentException("S is negative.").toString(), e.toString());
+            resultList = Main.findPrimes(5, 1, 500, -5);
+            Assertions.fail("S should be negative.");
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.assertEquals("S is negative.", e.getMessage());
         }
     }
 
@@ -34,10 +37,11 @@ public class LCSAJCoverage {
     void t3Test(){
         // t3 covers LCSAJ 3
         try {
-            expectedList = new ArrayList<>();
-            Assertions.assertEquals(expectedList, Main.findPrimes(5, -1, 500, 5));
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(new IllegalArgumentException("Range is negative.").toString(), e.toString());
+            resultList = Main.findPrimes(5, -1, 500, 5);
+            Assertions.fail("Range should be negative.");
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.assertEquals("Range is negative.", e.getMessage());
         }
     }
 
@@ -45,10 +49,11 @@ public class LCSAJCoverage {
     void t4Test(){
         // t4 covers LCSAJ 4
         try {
-            expectedList = new ArrayList<>();
-            Assertions.assertEquals(expectedList, Main.findPrimes(5, 500, 1, 5));
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(new IllegalArgumentException("Range is reversed.").toString(), e.toString());
+            resultList = Main.findPrimes(5, 500, 1, 5);
+            Assertions.fail("Range should be reversed.");
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.assertEquals("Range is reversed.", e.getMessage());
         }
     }
 

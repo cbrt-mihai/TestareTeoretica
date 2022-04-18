@@ -6,16 +6,17 @@ import java.util.List;
 
 public class IndependentCircuitTesting {
 
-    private List<Integer> expectedList;
+    private List<Integer> resultList;
 
     @Test
     void kLessThanZero() {
         // circuit covered 1, 2, 1
         try {
-            expectedList = new ArrayList<>();
-            Assertions.assertEquals(expectedList, Main.findPrimes(-1, 1, 1000, 5));
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(new IllegalArgumentException("K is negative.").toString(), e.toString());
+            resultList = Main.findPrimes(-1, 1, 1000, 5);
+            Assertions.fail("K should be negative.");
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.assertEquals("K is negative.", e.getMessage());
         }
     }
 
@@ -23,10 +24,11 @@ public class IndependentCircuitTesting {
     void sLessThanZero() {
         // circuit covered 1, 3, 4, 1
         try {
-            expectedList = new ArrayList<>();
-            Assertions.assertEquals(expectedList, Main.findPrimes(5, 1, 1000, -5));
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(new IllegalArgumentException("S is negative.").toString(), e.toString());
+            resultList = Main.findPrimes(5, 1, 1000, -5);
+            Assertions.fail("S should be negative.");
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.assertEquals("S is negative.", e.getMessage());
         }
     }
 
@@ -34,10 +36,11 @@ public class IndependentCircuitTesting {
     void aOrBLessThanZero() {
         // circuit covered 1, 3, 5, 6, 1
         try {
-            expectedList = new ArrayList<>();
-            Assertions.assertEquals(expectedList, Main.findPrimes(5, -1, -1000, 5));
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(new IllegalArgumentException("Range is negative.").toString(), e.toString());
+            resultList = Main.findPrimes(5, -1, -1000, 5);
+            Assertions.fail("Range should be negative.");
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.assertEquals("Range is negative.", e.getMessage());
         }
     }
 
@@ -45,10 +48,11 @@ public class IndependentCircuitTesting {
     void aGreaterThanB() {
         // circuit covered 1, 3, 5, 7, 8, 1
         try {
-            expectedList = new ArrayList<>();
-            Assertions.assertEquals(expectedList, Main.findPrimes(5, 500, 1, 5));
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(new IllegalArgumentException("Range is reversed.").toString(), e.toString());
+            resultList = Main.findPrimes(5, 1000, 1, 5);
+            Assertions.fail("Range should be reversed.");
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.assertEquals("Range is reversed.", e.getMessage());
         }
     }
 
@@ -61,7 +65,7 @@ public class IndependentCircuitTesting {
         // for number 5 the covered circuits are: 15, 16, 18, 19, 23, 24...25, 26, 30, 31, 32, 33, 34, 15 and  19, 20, 22, 19
         // and 26, 27...29, 26
         try {
-            expectedList = new ArrayList<>(List.of(5));
+            List<Integer> expectedList = new ArrayList<>(List.of(5));
             Assertions.assertEquals(expectedList, Main.findPrimes(1, 1, 500, 5));
         } catch (IllegalArgumentException e) {
             Assertions.fail("Exception: " + e.getMessage());
