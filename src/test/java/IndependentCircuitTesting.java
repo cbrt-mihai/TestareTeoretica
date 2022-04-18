@@ -68,7 +68,7 @@ public class IndependentCircuitTesting {
         // for number = 4 the covered circuits are:
         // 15, 16, 18, 19, 23, 34, 15
         // 19, 20, 21, 22, 19
-        // for number 5 the covered circuits are:
+        // for number = 5 the covered circuits are:
         // 15, 16, 18, 19, 23, 24...25, 26, 30, 31, 32, 33, 34, 15
         // 19, 20, 22, 19
         // 26, 27...29, 26
