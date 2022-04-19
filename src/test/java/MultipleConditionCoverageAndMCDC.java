@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MultipleConditionCoverage {
+public class MultipleConditionCoverageAndMCDC {
     private List<Integer> expectedList;
     private List<Integer> resultList;
     private String expectedErrorMessage;
@@ -179,7 +179,19 @@ public class MultipleConditionCoverage {
     }
 
     @Test
-    void numberEqualsOneTrue() {
+    void numberEqualsZeroOrOneTrueFalse() {
+        try {
+            expectedList = new ArrayList<>();
+            resultList = Main.findPrimes(1, 0, 2, 1);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void numberEqualsZeroOrOneFalseTrue() {
         try {
             expectedList = new ArrayList<>();
             resultList = Main.findPrimes(1, 1, 2, 1);
@@ -191,7 +203,7 @@ public class MultipleConditionCoverage {
     }
 
     @Test
-    void numberEqualsOneFalse() {
+    void numberEqualsZeroOrOneFalseFalse() {
         try {
             expectedList = new ArrayList<>(Arrays.asList(2));
             resultList = Main.findPrimes(1, 2, 2, 2);
@@ -201,4 +213,150 @@ public class MultipleConditionCoverage {
             Assertions.fail("Encountered exception: " + e.getMessage());
         }
     }
+
+    @Test
+    void notFoundAndDivisorLessThanSqrtNumberTrueTrue() {
+        try {
+            expectedList = new ArrayList<>();
+            resultList = Main.findPrimes(1, 4, 4, 4);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void notFoundAndDivisorLessThanSqrtNumberTrueFalse() {
+        try {
+            expectedList = new ArrayList<>(Arrays.asList(2));
+            resultList = Main.findPrimes(1, 2, 2, 2);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void notFoundAndDivisorLessThanSqrtNumberFalseFalse() {
+        try {
+            expectedList = new ArrayList<>();
+            resultList = Main.findPrimes(1, 12, 12, 3);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void notFoundAndDivisorLessThanSqrtNumberFalseTrue() {
+        try {
+            expectedList = new ArrayList<>();
+            resultList = Main.findPrimes(1, 9, 9, 9);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void numberModDivisorTrue() {
+        try {
+            expectedList = new ArrayList<>();
+            resultList = Main.findPrimes(1, 4, 4, 4);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void numberModDivisorFalse() {
+        try {
+            expectedList = new ArrayList<>();
+            resultList = Main.findPrimes(1, 9, 9, 9);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void notFoundTrue() {
+        try {
+            expectedList = new ArrayList<>(Arrays.asList(3));
+            resultList = Main.findPrimes(1, 3, 3, 3);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void notFoundFalse() {
+        try {
+            expectedList = new ArrayList<>();
+            resultList = Main.findPrimes(1, 4, 4, 4);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void copyNotZeroTrue() {
+        try {
+            expectedList = new ArrayList<>(Arrays.asList(3));
+            resultList = Main.findPrimes(1, 3, 3, 3);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void copyNotZeroFalse() {
+        try {
+            expectedList = new ArrayList<>(Arrays.asList(5));
+            resultList = Main.findPrimes(1, 5, 5, 5);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void sumEqualsSTrue() {
+        try {
+            expectedList = new ArrayList<>(Arrays.asList(7));
+            resultList = Main.findPrimes(1, 7, 7, 7);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+    @Test
+    void sumEqualsSFalse() {
+        try {
+            expectedList = new ArrayList<>();
+            resultList = Main.findPrimes(1, 7, 7, 9);
+            Assertions.assertEquals(expectedList, resultList);
+        }
+        catch (IllegalArgumentException e) {
+            Assertions.fail("Encountered exception: " + e.getMessage());
+        }
+    }
+
+
 }
