@@ -1,2 +1,4 @@
-TestTest.java
- TestTest
+EquivalencePartitioning.java
+ EquivalencePartitioning
+StatementCoverage.java
+ StatementCoverage
