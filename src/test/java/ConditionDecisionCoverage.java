@@ -343,6 +343,7 @@ public class ConditionDecisionCoverage {
         }
     }
 
+
     @Test
     void FoundAndDivisorHigherThanSqrtNumberFalseFalse() {
         try {
