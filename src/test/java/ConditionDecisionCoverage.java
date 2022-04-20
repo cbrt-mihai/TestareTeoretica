@@ -351,6 +351,7 @@ public class ConditionDecisionCoverage {
             resultList = Main.findPrimes(1, 9, 9, 9);
             Assertions.assertEquals(expectedList, resultList);
         }
+
         catch (IllegalArgumentException e) {
             Assertions.fail("Encountered exception: " + e.getMessage());
         }
