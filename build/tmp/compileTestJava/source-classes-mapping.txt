@@ -1,4 +1,20 @@
-EquivalencePartitioning.java
- EquivalencePartitioning
+DecisionCoverage.java
+ DecisionCoverage
+MultipleConditionCoverageAndMCDC.java
+ MultipleConditionCoverageAndMCDC
+LCSAJCoverage.java
+ LCSAJCoverage
 StatementCoverage.java
  StatementCoverage
+TestTest.java
+ TestTest
+IndependentCircuitTesting.java
+ IndependentCircuitTesting
+CategoryPartitioning.java
+ CategoryPartitioning
+StatenentCoverage.java
+ StatenentCoverage
+EquivalencePartitioning.java
+ EquivalencePartitioning
+ConditionDecisionCoverage.java
+ ConditionDecisionCoverage
