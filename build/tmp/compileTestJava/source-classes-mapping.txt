@@ -1,20 +1,16 @@
-DecisionCoverage.java
- DecisionCoverage
-MultipleConditionCoverageAndMCDC.java
- MultipleConditionCoverageAndMCDC
-LCSAJCoverage.java
- LCSAJCoverage
-StatementCoverage.java
- StatementCoverage
-TestTest.java
- TestTest
-IndependentCircuitTesting.java
- IndependentCircuitTesting
-CategoryPartitioning.java
- CategoryPartitioning
-StatenentCoverage.java
- StatenentCoverage
-EquivalencePartitioning.java
- EquivalencePartitioning
-ConditionDecisionCoverage.java
- ConditionDecisionCoverage
+teste/MultipleConditionCoverageAndMCDC.java
+ teste.MultipleConditionCoverageAndMCDC
+teste/IndependentCircuitTesting.java
+ teste.IndependentCircuitTesting
+teste/CategoryPartitioning.java
+ teste.CategoryPartitioning
+teste/ConditionDecisionCoverage.java
+ teste.ConditionDecisionCoverage
+teste/DecisionCoverage.java
+ teste.DecisionCoverage
+teste/LCSAJCoverage.java
+ teste.LCSAJCoverage
+teste/StatementCoverage.java
+ teste.StatementCoverage
+teste/EquivalencePartitioning.java
+ teste.EquivalencePartitioning

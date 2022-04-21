@@ -1,3 +1,6 @@
+package teste;
+
+import cod.Main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -5,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StatementCoverage {
+public class EquivalencePartitioning {
     @Test
     void kLessThanZero() {
         List expectedList;
@@ -64,8 +67,8 @@ public class StatementCoverage {
 
         // Good
         try {
-            expectedList = new ArrayList(Arrays.asList(5));
-            Assertions.assertEquals(expectedList, Main.findPrimes(1, 1, 5, 5));
+            expectedList = new ArrayList(Arrays.asList(5, 23, 41, 113, 131));
+            Assertions.assertEquals(expectedList, Main.findPrimes(5, 1, 1000, 5));
         }
         catch (IllegalArgumentException e) {
             Assertions.assertEquals(new IllegalArgumentException("Range is negative.").toString(), e.toString());
